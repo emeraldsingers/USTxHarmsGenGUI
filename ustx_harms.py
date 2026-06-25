@@ -14,7 +14,8 @@ def get_ustx_data(file_path):
         return None, "FileNotFoundError"
     except yaml.YAMLError as e:
         return None, f"YAMLError: {e}"
-    return yaml.safe_load(f), False
+    except Exception as e:
+        return None, f"Error reading file: {e}"
 
 def save_ustx_data(ustx_data, output_file_path):
     if not output_file_path.lower().endswith(".ustx"):

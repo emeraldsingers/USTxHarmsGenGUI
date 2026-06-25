@@ -39,7 +39,7 @@ class HarmonyGeneratorWorker(QRunnable):
                     return
                 key_name = self.key_name
                 key_mode = self.key_mode
-                key_tone_index, _, _ = get_key_from_notes(first_track_notes_for_key_detect)
+                key_tone_index = key_names.index(self.key_name)
             else:
                 key_tone_index, key_name, key_mode = get_key_from_notes(first_track_notes_for_key_detect)
 
